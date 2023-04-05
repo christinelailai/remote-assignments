@@ -40,4 +40,23 @@ let input2 = ['e', 'd', 'c', 'd', 'e'];
 console.log(toNumber(input2));
 
 
+function toNumberNew(input) {
+    let i = 0;
+    while (i < input.length) {
+        let letter = input[i];
+        if(letter.toLowerCase() === letter) {
+            input[i] = letter.charCodeAt(0)-96;
+        } else {
+            input[i] =letter.charCodeAt(0)-64;
+        }
+
+        i++;
+    }
+    return input;
+}
+
+let input3 = ['e', 'd', 'c', 'd', 'e'];
+console.log(toNumberNew(input3));
+
+
 
