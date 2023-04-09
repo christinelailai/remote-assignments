@@ -1,6 +1,8 @@
 function avg(data) {
-    const total = data.products.reduce((sum,products) =>
-        {sum += products.price} ,0);
+    const total = data.products.reduce((sum,products) =>{
+        sum += products.price;
+        return sum;
+    } ,0);
     return total/data.size;
 }
 

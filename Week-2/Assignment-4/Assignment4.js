@@ -5,9 +5,9 @@ clickArea.addEventListener('click',() => {
 })
 
 const buttonElement = document.querySelector(".button");
+const productCategory2 = document.querySelectorAll(".product_category2 ")
 buttonElement.addEventListener('click',() => {
-    document.querySelectorAll(".product_category2 ")[0].style.display = 'inline';
-    document.querySelectorAll(".product_category2 ")[1].style.display = 'inline';
-    document.querySelectorAll(".product_category2 ")[2].style.display = 'inline';
-    document.querySelectorAll(".product_category2 ")[3].style.display = 'inline';
+    for (let i = 0; i <productCategory2.length; i++) {
+        productCategory2[i].style.display = 'inline';
+    }
 })
