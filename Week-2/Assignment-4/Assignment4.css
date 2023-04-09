@@ -1,0 +1,88 @@
+#logo{
+    width:20px;
+    height: 20px;
+}
+
+#nav_background{
+    background-color: darkgrey;
+    display:flex;
+    flex-wrap:wrap
+
+
+}
+
+.company_name{
+    font-size: 20px;
+}
+
+
+.nav_list{
+    margin-left: 50%;
+    font-size: 20px;
+
+}
+
+.nav_list list{
+    margin-left: 10px;
+}
+
+.text_center{
+    text-align: center;
+}
+
+.welcome_block{
+    background-color: cadetblue;
+    padding: 10px;
+}
+
+
+.product_category_group{
+    display:flex;
+    justify-content: center;
+}
+
+
+.product_category_group2{
+    display:flex;
+    justify-content: center;
+}
+
+.product_category{
+    background-color: cornflowerblue;
+    width: 40%;
+    height: 100px;
+    margin: 5px;
+    text-align: center;
+}
+
+.product_category2{
+    background-color: cornflowerblue;
+    width: 40%;
+    height: 100px;
+    margin: 5px;
+    text-align: center;
+    display: none;
+}
+
+
+
+.button{
+    color: white;
+    background-color: blue;
+    padding: 10px;
+    position: relative;
+    margin-left: 47%;
+
+}
+
+@media  (min-width: 1200px) {
+    .product_category_group{
+        width: 1200px;
+        margin:auto;
+    }
+    .product_category_group2{
+        width: 1200px;
+        margin:auto;
+
+    }
+}
