@@ -15,7 +15,7 @@ router.get(`/`,(req,res) => {
     }  else {
         text=((parseInt(req.query.number) + 1) * req.query.number/2).toString();
     }
-    res.render('index.ejs',{text: text})
+    res.send(text);
 });
 
 
