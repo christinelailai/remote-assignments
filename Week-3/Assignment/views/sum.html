@@ -18,7 +18,7 @@
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                document.querySelector('#sum').innerHTML = xhr.responseText.substring(33);
+                document.querySelector('#sum').innerHTML = xhr.responseText;
             }} else {
                 console.log(xhr.status)
             }
