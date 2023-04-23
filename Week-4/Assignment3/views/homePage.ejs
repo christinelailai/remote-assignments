@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <header>Home Page</header><br>
+    <main>
+        <div>
+            <label for="email">Please fill in your email</label><br>
+            <input id="email" name="email" type="text"><br><br>
+            <label for="password">Please fill in your password</label><br>
+            <input id="password" name="password" type="text"><br><br>
+            <input type="button" class="sign-up" value ='sign-up'>
+            <input type="button" class="sign-in" value ='sign-in'>
+        </div>
+
+
+
+    </main>
+<script>
+     const signUp= document.querySelector('.sign-up')
+    const signIn = document.querySelector('.sign-in')
+    const email = document.querySelector('#email')
+    const password =  document.querySelector('#password')
+
+    signUp.addEventListener('click', () => {
+
+        const config = {
+            method:'POST', // insensitive but write in uppercase
+            headers:{
+                'Content-Type':'application/json' // encode in json
+            },
+            body: JSON.stringify({"email":email.value, "password":password.value}) // 一樣可省略
+        }
+        fetch('signup',config)
+            .then((res) => {
+                return res.text();
+            })
+            .then((res) => {
+                if (res === 'OK'){
+                    location.href = 'memberPage';
+                } else {
+                    alert('註冊失敗');
+                }
+        }).catch(err => console.log(err));
+    });
+     signIn.addEventListener('click', () => {
+
+         const config = {
+             method:'POST', // insensitive but write in uppercase
+             headers:{
+                 'Content-Type':'application/json' // encode in json
+             },
+             body: JSON.stringify({"email":email.value, "password":password.value}) // 一樣可省略
+         }
+         fetch('signin',config)
+             .then((res) => {
+                 return res.text();
+             })
+             .then((res) => {
+                 if (res === 'OK'){
+                     location.href = 'memberPage';
+                 } else {
+                     alert('帳密錯誤');
+                 }
+             }).catch(err => console.log(err));
+     });
+        // .then(result => {
+        //     if (result.text === password) {
+        //         fetch('./views/memberPage.ejs')}
+        // })})
+
+    //signIn.addEventListener('click',(email)=>{fetch('http://localhost:3000/signin').then(res => res.json())})
+
+
+
+
+    //
+    // signUp.addEventListener('click', () => {
+    //     const email = document.getElementById('email').value;
+    //     const password = document.getElementById('password').value;
+    //
+    //     fetch('http://localhost:3000/signup', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             email: email,
+    //             password: password
+    //         })
+    //     })
+    //         .then(response => {
+    //             if (response.status === 200) {
+    //                 return response.text();
+    //             } else {
+    //                 throw new Error('Sign up failed');
+    //             }
+    //         })
+    //         .then(result => {
+    //             if (result === password) {
+    //                 res.redirect('./views/memberPage.ejs');
+    //             } else {
+    //                 throw new Error('Password does not match');
+    //             }
+    //         })
+    //         .catch(error => {
+    //             console.error(error);
+    //         });
+    // });
+
+
+
+    </script>
+</body>
+</html>
