@@ -26,8 +26,8 @@ delayedResultPromise(4, 5, 3000).then(console.log);
 
 
 async function main() {
-        await delayedResultPromise(4, 5, 3000)
-            .then(console.log);
+        const result = await delayedResultPromise(4, 5, 3000);
+        console.log(result);
 }
 
 main();
